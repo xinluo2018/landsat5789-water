@@ -1,24 +1,27 @@
-// author: xin luo
+1// author: xin luo
 // create: 2020.11.25
 // des: search the landsat images
 
-/////////////////////////////////////////////////////////////////
-// var bands_vis = ['B5', 'B4', 'B3']   // landsat 8
-var bands_vis = ['B3', 'B2', 'B1']       // landsat 5,7
 
-var region = ee.Geometry.Rectangle(46.03, 40.78, 46.45, 41.07) //(lon_min,lat_min,lon_max,lat_max)
-// the area may be appropriate in 1,000,000,000-2,000,000,000
+/////////////////////////////////////////////////////////////////
+var bands_vis = ['SR_B5', 'SR_B4', 'SR_B3']   // landsat 9
+// var bands_vis = ['B5', 'B4', 'B3']   // landsat 8
+// var bands_vis = ['B3', 'B2', 'B1']       // landsat 5,7
+
+var region = ee.Geometry.Rectangle(99, 74.15, 100.8, 74.6) // (lon_min,lat_min,lon_max,lat_max)
+// the area may be appropriate in 2,00,000,000-4,000,000,000
 print('scene area:', region.area())
 
 /// Landsat 578 images
-var start_time = '1993-6-10'
-var end_time = '2013-10-01'
+var start_time = '2024-5-25'
+var end_time = '2024-12-21'
 
 // ----- Landsat 578 images selection ----- 
-var img_col = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
-// var img_col = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
-// var img_col = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
-  .filter(ee.Filter.lt('CLOUD_COVER_LAND', 20))
+// var img_col = ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
+// var img_col = ee.ImageCollection('LANDSAT/LE07/C02/T1_L2')
+// var img_col = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
+var img_col = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
+  .filter(ee.Filter.lt('CLOUD_COVER_LAND', 30))
   .filter(ee.Filter.gt('CLOUD_COVER_LAND', 0))
   .filterBounds(region)
   .filterDate(start_time, end_time);
@@ -47,7 +50,8 @@ var empty = ee.Image().byte();
 var scene_outline = empty.paint({
     featureCollection: region, color: 1, width: 3});
 
-Map.addLayer(image, {bands: bands_vis, min:0, max:4000}, 'Landsat 5');
+Map.addLayer(image, {bands: bands_vis, min:0, max:20000}, 'Landsat 9');
+// Map.addLayer(img_col, {bands: bands_vis, min:0, max:20000}, 'Landsat 9 collection');
 Map.addLayer(scene_outline, {palette: '#FFFF00'}, 'scene_outline')
 
 
