@@ -25,8 +25,8 @@ var l9_scene_04 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_035034_20220909').clip(l
 print('l9_scene_04',l9_scene_04)
 
 // scene 05
-var l9_region_05 = ee.Geometry.Rectangle(112.49, -7.35, 113.04, -6.85)
-var l9_scene_05 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_118065_20221220').clip(l9_region_05)
+var l9_region_05 = ee.Geometry.Rectangle(86.87, 34.36, 87.46, 34.85)
+var l9_scene_05 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_141036_20240820').clip(l9_region_05)
 print('l9_scene_05',l9_scene_05)
 
 // scene 06
@@ -70,8 +70,8 @@ var l9_scene_13 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_018050_20231007').clip(l
 print('l9_scene_13',l9_scene_13)
 
 // scene 14
-var l9_region_14 = ee.Geometry.Rectangle(-75.7, 71.39, -74, 71.95)
-var l9_scene_14 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_028009_20230810').clip(l9_region_14)
+var l9_region_14 = ee.Geometry.Rectangle(84.95, 32.93, 85.53, 33.42)
+var l9_scene_14 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_142037_20240928').clip(l9_region_14)
 print('l9_scene_14',l9_scene_14)
 
 // scene 15
