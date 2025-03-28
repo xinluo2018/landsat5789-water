@@ -9,6 +9,7 @@
 var l9_region_01 = ee.Geometry.Rectangle(17.29, 12.47, 17.75, 12.91)
 var l9_scene_01 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_183051_20220922').clip(l9_region_01)
 print('l9_scene_01',l9_scene_01)
+
 // scene 02
 var l9_region_02 = ee.Geometry.Rectangle(86.29, 54.27, 87.06, 54.68)
 var l9_scene_02 = ee.Image('LANDSAT/LC09/C02/T1_L2/LC09_146022_20220903').clip(l9_region_02)
@@ -535,7 +536,7 @@ print('l5_scene_07', l5_scene_07);
 
 // scene 08
 var l5_region_08 = ee.Geometry.Rectangle(0.46, 33.98, 0.98, 34.36);
-var l5_scene_08 = ee.Image('LANDSAT/LT05/C02/T1_L2/LT05_197036_19950517').clip(l5_region_08);
+var l5_scene_08 = ee.Image('LANDSAT/LT05/C02/T1_L2/LT05_197036_19950704').clip(l5_region_08);
 print('l5_scene_08', l5_scene_08);
 
 // scene 09
@@ -545,7 +546,7 @@ print('l5_scene_09', l5_scene_09);
 
 // scene 10
 var l5_region_10 = ee.Geometry.Rectangle(127.65, 37.80, 128.2, 38.18);
-var l5_scene_10 = ee.Image('LANDSAT/LT05/C02/T1_L2/LT05_115034_19851014').clip(l5_region_10);
+var l5_scene_10 = ee.Image('LANDSAT/LT05/C02/T1_L2/LT05_115034_19841112').clip(l5_region_10);
 print('l5_scene_10', l5_scene_10);
 
 // scene 11
@@ -669,56 +670,56 @@ var empty = ee.Image().byte();
 var l9_scene_01_outline = empty.paint({
     featureCollection: l9_region_01, color: 1, width: 3});
 Map.addLayer(l9_scene_01_outline, {palette: '0000FF'}, 'l9_scene_01_outline');
-// Map.addLayer(l9_scene_01, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 01');
+// Map.addLayer(l9_scene_01, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 01');
 
 // scene 02
 var l9_scene_02_outline = empty.paint({
     featureCollection: l9_region_02, color: 1, width: 3});
 Map.addLayer(l9_scene_02_outline, {palette: '0000FF'}, 'l9_scene_02_outline');
-// Map.addLayer(l9_scene_02, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 02');
+// Map.addLayer(l9_scene_02, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 02');
 
 
 // scene 03
 var l9_scene_03_outline = empty.paint({
     featureCollection: l9_region_03, color: 1, width: 3});
 Map.addLayer(l9_scene_03_outline, {palette: '0000FF'}, 'l9_scene_03_outline');
-// Map.addLayer(l9_scene_03, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 03');
+// Map.addLayer(l9_scene_03, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 03');
 
 // scene 04
 var l9_scene_04_outline = empty.paint({
     featureCollection: l9_region_04, color: 1, width: 3});
 Map.addLayer(l9_scene_04_outline, {palette: '0000FF'}, 'l9_scene_04_outline');
-// Map.addLayer(l9_scene_04, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 04');
+// Map.addLayer(l9_scene_04, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 04');
 
 // scene 05
 var l9_scene_05_outline = empty.paint({
     featureCollection: l9_region_05, color: 1, width: 3});
 Map.addLayer(l9_scene_05_outline, {palette: '0000FF'}, 'l9_scene_05_outline');
-// Map.addLayer(l9_scene_05, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 05');
+Map.addLayer(l9_scene_05, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 05');
 
 // scene 06
 var l9_scene_06_outline = empty.paint({
     featureCollection: l9_region_06, color: 1, width: 3});
 Map.addLayer(l9_scene_06_outline, {palette: '0000FF'}, 'l9_scene_06_outline');
-// Map.addLayer(l9_scene_06, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 06');
+// Map.addLayer(l9_scene_06, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 06');
 
 // scene 07
 var l9_scene_07_outline = empty.paint({
     featureCollection: l9_region_07, color: 1, width: 3});
 Map.addLayer(l9_scene_07_outline, {palette: '0000FF'}, 'l9_scene_07_outline');
-// Map.addLayer(l9_scene_07, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 07');
+// Map.addLayer(l9_scene_07, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 07');
 
 // scene 08
 var l9_scene_08_outline = empty.paint({
     featureCollection: l9_region_08, color: 1, width: 3});
 Map.addLayer(l9_scene_08_outline, {palette: '0000FF'}, 'l9_scene_08_outline');
-// Map.addLayer(l9_scene_08, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 08');
+// Map.addLayer(l9_scene_08, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 08');
 
 // scene 09
 var l9_scene_09_outline = empty.paint({
     featureCollection: l9_region_09, color: 1, width: 3});
 Map.addLayer(l9_scene_09_outline, {palette: '0000FF'}, 'l9_scene_09_outline');
-// Map.addLayer(l9_scene_09, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 09');
+// Map.addLayer(l9_scene_09, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 09');
 
 // scene 10
 var l9_scene_10_outline = empty.paint({
@@ -730,130 +731,121 @@ Map.addLayer(l9_scene_10_outline, {palette: '0000FF'}, 'l9_scene_10_outline');
 var l9_scene_11_outline = empty.paint({
     featureCollection: l9_region_11, color: 1, width: 3});
 Map.addLayer(l9_scene_11_outline, {palette: '0000FF'}, 'l9_scene_11_outline');
-// Map.addLayer(l9_scene_11, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 11');
+// Map.addLayer(l9_scene_11, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 11');
 
 // scene 12
 var l9_scene_12_outline = empty.paint({
     featureCollection: l9_region_12, color: 1, width: 3});
 Map.addLayer(l9_scene_12_outline, {palette: '0000FF'}, 'l9_scene_12_outline');
-// Map.addLayer(l9_scene_12, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 12');
+// Map.addLayer(l9_scene_12, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 12');
 
 // scene 13
 var l9_scene_13_outline = empty.paint({
     featureCollection: l9_region_13, color: 1, width: 3});
 Map.addLayer(l9_scene_13_outline, {palette: '0000FF'}, 'l9_scene_13_outline');
-// Map.addLayer(l9_scene_13, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 13');
+// Map.addLayer(l9_scene_13, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 13');
 
 // scene 14
 var l9_scene_14_outline = empty.paint({
     featureCollection: l9_region_14, color: 1, width: 3});
 Map.addLayer(l9_scene_14_outline, {palette: '0000FF'}, 'l9_scene_14_outline');
-// Map.addLayer(l9_scene_14, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 14');
+Map.addLayer(l9_scene_14, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 14');
 
 // scene 15
 var l9_scene_15_outline = empty.paint({
     featureCollection: l9_region_15, color: 1, width: 3});
 Map.addLayer(l9_scene_15_outline, {palette: '0000FF'}, 'l9_scene_15_outline');
-// Map.addLayer(l9_scene_15, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 15');
+// Map.addLayer(l9_scene_15, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 15');
 
 // scene 16
 var l9_scene_16_outline = empty.paint({
     featureCollection: l9_region_16, color: 1, width: 3});
 Map.addLayer(l9_scene_16_outline, {palette: '0000FF'}, 'l9_scene_16_outline');
-// Map.addLayer(l9_scene_16, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 16');
+// Map.addLayer(l9_scene_16, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 16');
 
 // scene 17
 var l9_scene_17_outline = empty.paint({
     featureCollection: l9_region_17, color: 1, width: 3});
 Map.addLayer(l9_scene_17_outline, {palette: '0000FF'}, 'l9_scene_17_outline');
-// Map.addLayer(l9_scene_17, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 17');
+// Map.addLayer(l9_scene_17, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 17');
 
 // scene 18
 var l9_scene_18_outline = empty.paint({
     featureCollection: l9_region_18, color: 1, width: 3});
 Map.addLayer(l9_scene_18_outline, {palette: '0000FF'}, 'l9_scene_18_outline');
-// Map.addLayer(l9_scene_18, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 18');
+// Map.addLayer(l9_scene_18, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 18');
 
 // scene 19
 var l9_scene_19_outline = empty.paint({
     featureCollection: l9_region_19, color: 1, width: 3});
 Map.addLayer(l9_scene_19_outline, {palette: '0000FF'}, 'l9_scene_19_outline');
-// Map.addLayer(l9_scene_19, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 19');
+// Map.addLayer(l9_scene_19, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 19');
 
 // scene 20
 var l9_scene_20_outline = empty.paint({
     featureCollection: l9_region_20, color: 1, width: 3});
 Map.addLayer(l9_scene_20_outline, {palette: '0000FF'}, 'l9_scene_20_outline');
-// Map.addLayer(l9_scene_20, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 20');
+// Map.addLayer(l9_scene_20, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 20');
 
 // scene 21
 var l9_scene_21_outline = empty.paint({
     featureCollection: l9_region_21, color: 1, width: 3});
 Map.addLayer(l9_scene_21_outline, {palette: '0000FF'}, 'l9_scene_21_outline');
-// Map.addLayer(l9_scene_21, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 21');
+// Map.addLayer(l9_scene_21, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 21');
 
 // scene 22
 var l9_scene_22_outline = empty.paint({
     featureCollection: l9_region_22, color: 1, width: 3});
 Map.addLayer(l9_scene_22_outline, {palette: '0000FF'}, 'l9_scene_22_outline');
-// Map.addLayer(l9_scene_22, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 22');
+// Map.addLayer(l9_scene_22, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 22');
 
 // scene 23
 var l9_scene_23_outline = empty.paint({
     featureCollection: l9_region_23, color: 1, width: 3});
 Map.addLayer(l9_scene_23_outline, {palette: '0000FF'}, 'l9_scene_23_outline');
-// Map.addLayer(l9_scene_23, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 23');
+// Map.addLayer(l9_scene_23, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 23');
 
 // scene 24
 var l9_scene_24_outline = empty.paint({
     featureCollection: l9_region_24, color: 1, width: 3});
 Map.addLayer(l9_scene_24_outline, {palette: '0000FF'}, 'l9_scene_24_outline');
-// Map.addLayer(l9_scene_24, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 24');
+// Map.addLayer(l9_scene_24, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 24');
 
 // scene 25
 var l9_scene_25_outline = empty.paint({
     featureCollection: l9_region_25, color: 1, width: 3});
 Map.addLayer(l9_scene_25_outline, {palette: '0000FF'}, 'l9_scene_25_outline');
-// Map.addLayer(l9_scene_25, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 25');
+// Map.addLayer(l9_scene_25, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 25');
 
 // scene 26
 var l9_scene_26_outline = empty.paint({
     featureCollection: l9_region_26, color: 1, width: 3});
 Map.addLayer(l9_scene_26_outline, {palette: '0000FF'}, 'l9_scene_26_outline');
-// Map.addLayer(l9_scene_26, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 26');
+// Map.addLayer(l9_scene_26, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 26');
 
 // scene 27
 var l9_scene_27_outline = empty.paint({
     featureCollection: l9_region_27, color: 1, width: 3});
 Map.addLayer(l9_scene_27_outline, {palette: '0000FF'}, 'l9_scene_27_outline');
-// Map.addLayer(l9_scene_27, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 27');
+// Map.addLayer(l9_scene_27, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 27');
 
 // scene 28
 var l9_scene_28_outline = empty.paint({
     featureCollection: l9_region_28, color: 1, width: 3});
 Map.addLayer(l9_scene_28_outline, {palette: '0000FF'}, 'l9_scene_28_outline');
-// Map.addLayer(l9_scene_28, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 28');
+// Map.addLayer(l9_scene_28, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 28');
 
 // scene 29
 var l9_scene_29_outline = empty.paint({
     featureCollection: l9_region_29, color: 1, width: 3});
 Map.addLayer(l9_scene_29_outline, {palette: '0000FF'}, 'l9_scene_29_outline');
-// Map.addLayer(l9_scene_29, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 29');
+// Map.addLayer(l9_scene_29, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 29');
 
 // scene 30
 var l9_scene_30_outline = empty.paint({
     featureCollection: l9_region_30, color: 1, width: 3});
 Map.addLayer(l9_scene_30_outline, {palette: '0000FF'}, 'l9_scene_30_outline');
-// Map.addLayer(l9_scene_30, {bands:['B5','B4','B3'], max:3000, min:0}, 'l9 scene 30');
-
-
-
-
-
-
-
-
-
+// Map.addLayer(l9_scene_30, {bands:['SR_B5','SR_B4','SR_B3'], max:3000, min:0}, 'l9 scene 30');
 
 // --------- Landsat 8 -----------
 var empty = ee.Image().byte();
@@ -945,7 +937,7 @@ Map.addLayer(l8_scene_14_outline, {palette: 'FF0000'}, 'l8_scene_14_outline');
 var l8_scene_15_outline = empty.paint({
     featureCollection: l8_region_15, color: 1, width: 3});
 Map.addLayer(l8_scene_15_outline, {palette: 'FF0000'}, 'l8_scene_15_outline');
-Map.addLayer(l8_scene_15, {bands:['B5','B4','B3'], max:3000, min:0}, 'l8 scene 15');
+// Map.addLayer(l8_scene_15, {bands:['B5','B4','B3'], max:3000, min:0}, 'l8 scene 15');
 
 // scene 16
 var l8_scene_16_outline = empty.paint({
